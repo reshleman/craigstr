@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<% if signed_in? %>
+  <div>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Sign out", session_path, method: :delete %>
+  </div>
+<% end %>
+
+<div>
+  <%= yield %>
+</div>
 
 </body>
 </html>

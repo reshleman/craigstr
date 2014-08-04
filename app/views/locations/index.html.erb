@@ -1,0 +1,7 @@
+<% if current_user.admin? %>
+  <%= link_to "New Location", new_admin_location_path %>
+<% end %>
+
+<h1>Locations</h1>
+
+<%= render @locations %>
