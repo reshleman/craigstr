@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations, only: [:index]
+  resources :posts, only: [:create, :index]
 
   namespace :admin do
     resources :locations, only: [:new, :create]

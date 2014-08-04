@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20140804174148) do
     t.datetime "updated_at"
   end
 
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                           null: false
     t.string   "password_digest",                 null: false
