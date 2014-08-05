@@ -1,0 +1,8 @@
+<%= form_for [:admin, @location, @category] do |form|%>
+  <div>
+    Name <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
