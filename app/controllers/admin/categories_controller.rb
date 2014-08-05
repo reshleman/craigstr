@@ -14,9 +14,7 @@ class Admin::CategoriesController < AdminController
     else
       render :new
     end
-
   end
-
 
   private
 

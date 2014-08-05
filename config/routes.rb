@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations, only: [:index, :show] do
-    resources :categories, only: [:index, :show]
+    resources :categories, only: [:show]
   end
 
 
