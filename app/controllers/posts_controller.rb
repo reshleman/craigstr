@@ -7,15 +7,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(new_post_params)
-    @post.save
-    redirect_to posts_path
+    @post = current_user.posts.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render :index
+    end
   end
 
   private
 
-  def new_post_params
-    params.require(:post).permit(:title, :body).merge(user: current_user)
+  def post_params 
+    params.
+      require(:post).
+      permit(:title, :body)
   end
 end
 
