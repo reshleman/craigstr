@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     root "locations#index"
   end
 
-  resources :locations, only: [:index, :new]
+  resources :locations, only: [:index]
+
+  namespace :admin do
+    resources :locations, only: [:new, :create]
+  end
 end

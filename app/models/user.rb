@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   def is_admin?
-    admin == true
+    admin
   end
 end
