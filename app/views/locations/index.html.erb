@@ -1,4 +1,4 @@
-<% if current_user.is_admin? %>
+<% if current_user.admin? %>
   <%= link_to "New Location", new_admin_location_path %>
 <% end %>
 
