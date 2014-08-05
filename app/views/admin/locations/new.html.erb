@@ -1,4 +1,4 @@
-<%= form_for @location do |form| %>
+<%= form_for [:admin, @location] do |form| %>
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
