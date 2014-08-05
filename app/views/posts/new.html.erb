@@ -1,6 +1,6 @@
 <h1> Hey 'ster! </h1>
 <h3> Post Something New!</h3>
-<span id="error"> <%= params['msg'] %> </span> 
+
 <%= form_for(@posts) do |form| %>
   <%= render form %>
   <%= form.submit "New Post" %>

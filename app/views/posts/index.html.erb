@@ -1,12 +1,10 @@
 <h1> Create new post:</h1>
+
 <%= form_for(@post) do |form| %>
-	<%= render form %>
-	<%= form.submit "Submit" %>
-	<% end %>
+  <%= render form %>
+  <%= form.submit "Submit" %>
+<% end %>
+
 <h1> All posts! </h1>
 
 <%= render(@posts) || "There are no posts yet, create one using the form above! Or don't....because really, what's the point?" %>
-
-
-
-
