@@ -13,10 +13,10 @@ class PostsController < ApplicationController
   end
 
   private
+
   def new_post_params
     params.require(:post).permit(:title, :body).merge(user: current_user)
   end
-
 end
 
 
