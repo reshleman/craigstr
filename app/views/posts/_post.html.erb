@@ -1,8 +1,11 @@
 <div id="title">
   <p> <h3><%= post.title %></h3>
     Posted by <%= post.user.email %>
-  </p>
+</p>
 </div>
 <div id="body">
   <p><%= post.body %></p>
 </div>
+<% if post.user %>
+  <%= link_to "Delete Post", [post.category.location, post.category, post], method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>

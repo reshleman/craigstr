@@ -19,6 +19,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    @location = Location.find(params[:location_id])
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to [@location, post.category]
+  end
+
   private
 
   def post_params
