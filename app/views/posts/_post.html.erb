@@ -6,6 +6,6 @@
 <div id="body">
   <p><%= post.body %></p>
 </div>
-<% if post.user %>
+<% if current_user.email == post.user.email || current_user.admin %>
   <%= link_to "Delete Post", [post.category.location, post.category, post], method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
