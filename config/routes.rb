@@ -15,9 +15,11 @@ Rails.application.routes.draw do
 
   resources :locations, only: [:index, :show] do
     resources :categories, only: [:show] do
-      resources :posts, only: [:new, :create, :show]
+      resources :posts, only: [:new, :create]
     end
   end
+
+resources :posts, only: [:show]
 
   namespace :admin do
     resources :locations, only: [:new, :create] do
