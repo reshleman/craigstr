@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 gem 'rails', '4.1.3'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -16,4 +18,9 @@ gem 'monban', '~> 0.1.1'
 group :development do
   gem 'spring'
   gem 'monban-generators'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'thin', '~> 1.6.2'
 end
