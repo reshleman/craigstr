@@ -1,5 +1,6 @@
 <div id="title">
-  <h3> <%= post.title %></h3>
+  <h3><%= post.title %></h3>
+  Posted by <%= post.user.email %>
 </div>
 <div id="body">
   <%= post.body %>
