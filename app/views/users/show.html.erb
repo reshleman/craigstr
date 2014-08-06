@@ -2,6 +2,6 @@
 
 <% @posts.each do |post| %>
   <div id="title">
-    <%= post.title %>
+    <%= link_to post.title, [post.category.location, post.category, post] %>
   </div>
 <% end %>
