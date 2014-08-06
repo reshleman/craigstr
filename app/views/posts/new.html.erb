@@ -1,7 +1,4 @@
-<h1> Hey 'ster! </h1>
-<h3> Post Something New!</h3>
-
-<%= form_for(@posts) do |form| %>
+<%= form_for([@location, @category, @post]) do |form| %>
   <%= render form %>
-  <%= form.submit "New Post" %>
+  <%= form.submit %>
 <% end %>

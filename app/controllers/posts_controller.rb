@@ -1,27 +1,30 @@
 class PostsController < ApplicationController
-  before_action :require_login, except: [:index, :create] #added for testing purposes since no root_path defined
-
-  def index
+  def new
     @post = Post.new
-    @posts = Post.all
+    @category = Category.find(params[:category_id])
+    @location = Location.find(params[:location_id])
   end
 
   def create
+    @location = Location.find(params[:location_id])
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to posts_path
+      redirect_to [@location, @post.category]
     else
-      render :index
+      render :new
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
 
-  def post_params 
+  def post_params
     params.
       require(:post).
-      permit(:title, :body)
+      permit(:title, :body).
+      merge(category_id: params[:category_id])
   end
 end
-
-

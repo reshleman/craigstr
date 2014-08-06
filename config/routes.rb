@@ -13,9 +13,10 @@ Rails.application.routes.draw do
     root "homes#show"
   end
 
-  resources :posts, only: [:create, :index]
   resources :locations, only: [:index, :show] do
-    resources :categories, only: [:show]
+    resources :categories, only: [:show] do
+      resources :posts, only: [:new, :create, :show]
+    end
   end
 
   namespace :admin do

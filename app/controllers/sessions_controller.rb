@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
-      redirect_to posts_path #for testing adding current user data to posts
+      redirect_to root_path 
     else
       render :new
     end
