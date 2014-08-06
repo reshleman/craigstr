@@ -9,10 +9,11 @@
 <body>
 
 <% if signed_in? %>
-  <div>
+  <nav>
     <%= link_to "Home", root_path %>
+    <%= link_to "Posts", current_user %>
     <%= link_to "Sign out", session_path, method: :delete %>
-  </div>
+  </nav>
 <% end %>
 
 <h1>Craigstr</h1>
