@@ -1,13 +1,13 @@
-<div>
-  <h2><%= @location.name %></h2>
-</div>
-
 <% if current_user.admin? %>
   <%= link_to "New Category", new_admin_location_category_path(@location) %>
 <% end %>
 
+<div>
+  <h2><%= @location.name %></h2>
+</div>
+
 <% @location.categories.each do |category| %>
   <div>
-    <%= category.name %>
+    <%= link_to category.name, location_category_path(@location, category) %>
   </div>
 <% end %>
