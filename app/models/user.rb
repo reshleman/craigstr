@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-  def flag_as_spam(post)
+  def flag(post)
     spam_flags.create(post: post)
   end
 end
