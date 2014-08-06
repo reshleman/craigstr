@@ -17,3 +17,8 @@ group :development do
   gem 'spring'
   gem 'monban-generators'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'thin', '~> 1.6.2'
+end
