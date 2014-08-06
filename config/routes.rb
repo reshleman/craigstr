@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: [:show]
+  resources :posts, only: [:show] do
+    resources :spam_flags, only: [:create]
+  end
 
   namespace :admin do
     resources :locations, only: [:new, :create] do

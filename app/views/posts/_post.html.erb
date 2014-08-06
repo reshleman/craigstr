@@ -1,8 +1,13 @@
-<div id="title">
-  <p> <h3><%= post.title %></h3>
-    Posted by <%= post.user.email %>
-  </p>
-</div>
-<div id="body">
-  <p><%= post.body %></p>
+<div class="post">
+  <div class="post-title">
+    <p><h3><%= post.title %></h3>
+      Posted by <%= post.user.email %>
+    </p>
+  </div>
+  <div class="post-spam-flag">
+    <%= link_to "Flag as spam", spam_flags_path(post_id: post.id), method: :post %>
+  </div>
+  <div class="post-body">
+    <p><%= post.body %></p>
+  </div>
 </div>
