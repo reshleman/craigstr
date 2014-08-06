@@ -8,6 +8,6 @@
 
 <% @location.categories.each do |category| %>
   <div>
-    <%= link_to category.name, location_category_path(@location, category) %>
+    <%= link_to category.name, [@location, category] %>
   </div>
 <% end %>

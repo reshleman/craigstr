@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @location = Location.find(params[:location_id])
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to location_category_path(@location, @post.category)
+      redirect_to [@location, @post.category]
     else
       render :new
     end
