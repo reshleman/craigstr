@@ -15,6 +15,10 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def show
+    @posts = current_user.posts.all
+  end
 
   private
 
