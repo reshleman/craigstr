@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: [:show]
+  resources :posts, only: [:show, :destroy]
 
   namespace :admin do
     resources :locations, only: [:new, :create] do

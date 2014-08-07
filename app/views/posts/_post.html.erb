@@ -9,3 +9,6 @@
     <%= image_tag post.image.url(:medium) %>
   <% end %>
 </div>
+<% if current_user.can_edit?(post) %>
+  <%= link_to "Delete Post", post, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
