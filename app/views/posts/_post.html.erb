@@ -8,7 +8,7 @@
     <% if post.flagged_by?(current_user) %>
       <p>Thanks for flagging this post as spam.</p>
     <% else %>
-      <%= link_to "Flag as spam", spam_flags_path(post_id: post.id), method: :post %>
+      <%= link_to "Flag as spam", post_spam_flags_path(post), method: :post %>
     <% end %>
   </div>
   <div class="post-body">
