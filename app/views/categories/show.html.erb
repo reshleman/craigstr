@@ -2,7 +2,7 @@
 <h2><%= @category.name %></h2>
 <% @posts.each do |post|%>
   <div>
-    <%= link_to post.title, location_category_post_path(@location, @category, post) %>
+    <%= link_to post.title, post_path(post) %>
   </div>
 <%end%>
 
