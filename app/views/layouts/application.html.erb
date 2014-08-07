@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Craigstr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Craigstr</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Craigstr", '#', id: "logo" %>
+
 
 <% if signed_in? %>
   <nav>
@@ -18,10 +23,22 @@
     <%= link_to "Sign out", session_path, method: :delete %>
   </nav>
 <% end %>
+          <% if signed_in? %>
+            <nav>
+              <ul class="nav pull-right">
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "My Posts", current_user %></li>
+                <li><%= link_to "Sign out", session_path, method: :delete %></li>
+              </ul>
+            </nav>
+          <% end %>
+        </div>
+      </div>
+    </header>
 
-<h1>Craigstr</h1>
 
-<%= yield %>
-
-</body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
