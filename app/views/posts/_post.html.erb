@@ -5,5 +5,7 @@
 </div>
 <div id="body">
   <p><%= post.body %></p>
-  <%= image_tag post.image.url, width: "200px" %>
+  <% if post.image? %>
+    <%= image_tag post.image.url, width: "200px" %>
+  <% end %>
 </div>
