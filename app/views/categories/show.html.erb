@@ -2,9 +2,13 @@
 
 <h2><%= @category.name %></h2>
 
-<% @posts.each do |post|%>
-  <div>
-    <%= link_to post.title, post %>
-  </div>
-<% end %>
+<p>
+  <% @posts.each do |post|%>
+    <div>
+      <%= link_to post.title, post %>
+    </div>
+  <% end %>
+</p>
+
+<%= paginate @posts %>
 
