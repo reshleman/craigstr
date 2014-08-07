@@ -14,10 +14,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-#Ignore DS Files
+
+# Ignore DS Files
 .DS_Store
 .DS\_Store
-public/system
-#ignore vim swap files - temporary files
+
+# Ignore vim swap files - temporary files
 *.sw?
 
+# Ignore paperclip attachments
+/public/system

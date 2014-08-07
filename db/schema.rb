@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20140806205621) do
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
 
+  create_table "spam_flags", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spam_flags", ["post_id"], name: "index_spam_flags_on_post_id", using: :btree
+  add_index "spam_flags", ["user_id"], name: "index_spam_flags_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                           null: false
     t.string   "password_digest",                 null: false

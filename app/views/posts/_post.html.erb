@@ -1,14 +1,27 @@
-<div id="title">
-  <p> <h3><%= post.title %></h3>
-    Posted by <%= post.user.email %>
-  </p>
+<div class="post">
+  <div class="post-title">
+    <h3><%= post.title %></h3>
+    <p>Posted by <%= post.user.email %></p>
+  </div>
+
+  <div class="post-spam-flag">
+    <% if post.flagged_by?(current_user) %>
+      <p>Thanks for flagging this post as spam.</p>
+    <% else %>
+      <%= link_to "Flag as spam", post_spam_flags_path(post), method: :post %>
+    <% end %>
+  </div>
+
+  <div class="post-body">
+    <p><%= post.body %></p>
+    <% if post.image? %>
+      <%= image_tag post.image.url(:medium) %>
+    <% end %>
+  </div>
+
+  <div class="post-edit">
+    <% if current_user.can_edit?(post) %>
+      <%= link_to "Delete Post", post, method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
 </div>
-<div id="body">
-  <p><%= post.body %></p>
-  <% if post.image? %>
-    <%= image_tag post.image.url(:medium) %>
-  <% end %>
-</div>
-<% if current_user.can_edit?(post) %>
-  <%= link_to "Delete Post", post, method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
