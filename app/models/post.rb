@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :spam_flags
+  paginates_per 10 
 
   has_attached_file :image, styles: { medium: "300x300>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
@@ -15,6 +16,8 @@ class Post < ActiveRecord::Base
     group("posts.id").
     order("flag_count DESC, posts.updated_at DESC")
   }
+
+  default_scope { order("updated_at DESC") }
 
   def flagged_by?(user)
     spam_flags.exists?(user: user)
