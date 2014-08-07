@@ -4,7 +4,6 @@ class Post < ActiveRecord::Base
   has_many :spam_flags
   paginates_per 10 
 
-
   has_attached_file :image, styles: { medium: "300x300>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
