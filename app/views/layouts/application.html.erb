@@ -10,15 +10,13 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "Craigstr", '#', id: "logo" %>
+          <%= link_to "Craigstr", root_path , id: "logo" %>
 
           <% if signed_in? %>
-            <nav>
-              <ul class="nav pull-right">
-                <li><%= link_to "Home", root_path %></li>
-                <li><%= link_to "My Posts", current_user %></li>
-                <li><%= link_to "Sign out", session_path, method: :delete %></li>
-              </ul>
+            <nav class="nav pull-right">
+                <%= link_to "Home", root_path %>
+                <%= link_to "My Posts", current_user %>
+                <%= link_to "Sign out", session_path, method: :delete %>
             </nav>
           <% end %>
         </div>
