@@ -1,0 +1,8 @@
+<h2>Posts Flagged as Spam</h2>
+
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to post.title, post %>
+    (<%= pluralize post.flag_count, "flag" %>)
+  </div>
+<% end %>
