@@ -11,6 +11,8 @@ class Post < ActiveRecord::Base
   validates :body, presence: true
   validates :title, presence: true
 
+  default_scope { order("updated_at DESC") }
+
   def flagged_by?(user)
     spam_flags.exists?(user: user)
   end
