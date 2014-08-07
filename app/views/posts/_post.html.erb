@@ -6,6 +6,6 @@
 <div id="body">
   <p><%= post.body %></p>
   <% if post.image? %>
-    <%= image_tag post.image.url, width: "200px" %>
+    <%= image_tag post.image.url(:medium) %>
   <% end %>
 </div>
