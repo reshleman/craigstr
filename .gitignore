@@ -17,6 +17,7 @@
 #Ignore DS Files
 .DS_Store
 .DS\_Store
+public/system
 #ignore vim swap files - temporary files
 *.sw?
 

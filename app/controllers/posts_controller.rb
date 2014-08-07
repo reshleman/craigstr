@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def post_params
     params.
       require(:post).
-      permit(:title, :body).
+      permit(:title, :body, :image).
       merge(category_id: params[:category_id])
   end
 end
