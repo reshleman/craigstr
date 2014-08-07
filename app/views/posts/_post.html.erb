@@ -6,6 +6,6 @@
 <div id="body">
   <p><%= post.body %></p>
 </div>
-<% if current_user.email == post.user.email || current_user.admin %>
+<% if current_user.can_edit?(post) %>
   <%= link_to "Delete Post", post, method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
