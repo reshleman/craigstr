@@ -7,6 +7,6 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
 
   def flagged_by?(user)
-    spam_flags.find_by(user: user)
+    spam_flags.exists?(user: user)
   end
 end

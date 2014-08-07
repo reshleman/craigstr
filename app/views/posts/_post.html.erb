@@ -1,8 +1,7 @@
 <div class="post">
   <div class="post-title">
-    <p><h3><%= post.title %></h3>
-      Posted by <%= post.user.email %>
-    </p>
+    <h3><%= post.title %></h3>
+    <p>Posted by <%= post.user.email %></p>
   </div>
   <div class="post-spam-flag">
     <% if post.flagged_by?(current_user) %>
