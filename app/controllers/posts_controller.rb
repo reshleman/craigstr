@@ -20,10 +20,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @location = Location.find(params[:location_id])
     post = Post.find(params[:id])
     post.destroy
-    redirect_to [@location, post.category]
+    redirect_to [post.category.location, post.category]
   end
 
   private

@@ -1,11 +1,11 @@
 <div id="title">
   <p> <h3><%= post.title %></h3>
     Posted by <%= post.user.email %>
-</p>
+  </p>
 </div>
 <div id="body">
   <p><%= post.body %></p>
 </div>
 <% if current_user.email == post.user.email || current_user.admin %>
-  <%= link_to "Delete Post", [post.category.location, post.category, post], method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Delete Post", post, method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
