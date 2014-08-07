@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resource :dashboard, only: [:show]
     resources :locations, only: [:new, :create] do
       resources :categories, only: [:new, :create]
     end
