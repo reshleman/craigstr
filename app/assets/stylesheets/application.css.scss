@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
 
 /* general stuff */
+
 html {
   overflow-y: scroll;
 }
@@ -25,8 +27,16 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
+a {
+  color: $text-color;
+  text-decoration: none;
+}
 
-
+a:hover {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
 
 /* typography */
 
@@ -47,7 +57,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: lighten($text-color, 50%);
 }
 
 p {
@@ -61,7 +71,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 2em;
-  color: #FF5C00;
+  color: $text-color;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -74,10 +84,8 @@ p {
   text-decoration: none;
 }
 nav a {
-	color: #FF5C00;
-	font-size: 1em;
-	text-transform: uppercase;
   text-decoration: none;
+  font-weight: bold;
   letter-spacing: -1px;
   margin-right: 10px;
   padding-top: 20px;
@@ -88,6 +96,9 @@ nav a {
 
 .location-name {
   font-size: 3em;
-  background-color: #FF8039;
-  color: #9B3800 !important;
+  background-color: $background-color;
+  color: $text-color;
+}
+.list-group-item {
+  background-color: lighten($background-color, 30%); 
 }
