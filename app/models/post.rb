@@ -11,6 +11,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
 
   scope :flagged, -> {
+    unscoped.
     select("posts.*, count(*) as flag_count").
     joins(:spam_flags).
     group("posts.id").
