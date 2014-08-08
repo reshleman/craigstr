@@ -2,12 +2,14 @@
   <%= link_to "New Category", new_admin_location_category_path(@location) %>
 <% end %>
 
-<div>
-  <h2><%= @location.name %></h2>
+<div class="location-name">
+  <%= @location.name %>
 </div>
 
-<% @location.categories.each do |category| %>
-  <div>
-    <%= link_to category.name, [@location, category] %>
-  </div>
-<% end %>
+<div class="categories">
+  <ul class="list-group">
+    <% @location.categories.each do |category| %>
+      <li class="list-group-item">  <%= link_to category.name, [@location, category] %> </li>
+    <% end %>
+  </ul>
+</div>
