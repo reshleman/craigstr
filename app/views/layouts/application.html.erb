@@ -25,19 +25,18 @@
 <% end %>
           <% if signed_in? %>
             <nav class="nav pull-right">
-                <%= link_to "My Posts", current_user %>
-                <%= link_to "Sign out", session_path, method: :delete %>
+              <%= link_to "My Posts", current_user %>
+              <%= link_to "Sign out", session_path, method: :delete %>
             </nav>
           <% end %>
         </div>
       </div>
     </header>
 
-
     <div class="container">
       <div class="center hero-unit">
-      <%= yield %>
-    </div>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
