@@ -14,7 +14,6 @@
 
           <% if signed_in? %>
             <nav class="nav pull-right">
-                <%= link_to "Home", root_path %>
                 <%= link_to "My Posts", current_user %>
                 <%= link_to "Sign out", session_path, method: :delete %>
             </nav>
