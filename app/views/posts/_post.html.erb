@@ -21,6 +21,7 @@
 
   <div class="post-edit">
     <% if current_user.can_edit?(post) %>
+      <%= link_to "Edit Post", post, method: :edit, %>
       <%= link_to "Delete Post", post, method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </div>
