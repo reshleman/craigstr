@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to [post.category.location, post.category]
+      redirect_to [@post.category.location, @post.category, @post]
     else
       render :edit
     end
