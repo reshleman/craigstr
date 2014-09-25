@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: [:show, :destroy] do
+  resources :posts, only: [:show, :destroy, :edit, :update] do
     resources :spam_flags, only: [:create]
   end
 
